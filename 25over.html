@@ -63,7 +63,7 @@
 			}
 			}
 				
-			}	//array to hold filtered data
+			}	
                 }
             },
             created() {      // section executes as page loads
@@ -75,10 +75,7 @@
                     this.tickets = await response.json()
                       
                 },
-		getOver25(){
 		
-			this.tickets1 = this.tickets.filter((over) => over.ticket == this.ticket);
-		}
             }
           })
       
