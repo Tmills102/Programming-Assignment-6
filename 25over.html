@@ -53,7 +53,17 @@
             data() {     // returns an object of data
                 return {
                     tickets: [],           // array to hold student data
-			over25: [],	//array to hold filtered data
+			computed: {
+			
+			over25: function(){
+			
+			return this.tickets.filter(function(ticket){
+			
+			return ticket.actual_speed - ticket.posted_speed > 25;
+			}
+			}
+				
+			}	//array to hold filtered data
                 }
             },
             created() {      // section executes as page loads
@@ -63,7 +73,7 @@
                 async getData() {
                     const response = await fetch('tickets1.json')
                     this.tickets = await response.json()
-                    //tickets = data.filter( (item) => item.major == majSelect );     
+                      
                 },
 		getOver25(){
 		
