@@ -59,7 +59,7 @@
 			
 			return this.tickets.filter(function(ticket){
 			
-			return ticket.actual_speed - ticket.posted_speed > 25;
+			return (ticket.actual_speed - ticket.posted_speed) > 25;
 			}
 			}
 				
